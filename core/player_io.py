@@ -1,15 +1,12 @@
-
-from coor.deck import run_full_game
 def ask_player_action() -> str:
-    request = input("do you want to play?")
-    if request.isalpha():
-        if request is not "H" or "S":
-            print("Your answer is incorrect. Do you want to play?")
+    request = input("do you want to play? enter H to playת or S If you don't want to play")
+    if request != "S" or request != "H":
+        print("invalid char, please enter again")
     elif request == "S":
-        print("end game")
+        return "S"
     else:
-        run_full_game()
-
-
-    return ""
-
+        return "H"
+    
+    
+    
+print(ask_player_action("S"))

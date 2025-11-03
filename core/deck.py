@@ -14,11 +14,23 @@ build_standard_deck()
 
 def shuffle_by_suit(deck: list[dict], swaps: int = 5000) -> list[dict]:
     for i in range(5000):
-        idxi = deck.random.int(0, 51)
+        idxi = random.randint(0, 51)
         idxi - idxi["value"]
-        idxj = deck.random.int(0, 51)
-        if idxi != idxj and idxj % 5 == 0 and idxj % 3 == 0 and idxj % 2 == 0 and idxj % 7 == 0:
-            idxj = deck.random.int(0, 51)
-        else:
-            idxj, idxj == idxi, idxj
-            return []
+        idxj = random.randint(0, 51)
+        idxj - idxj["value"]
+
+        if idxi["value"] != idxj["value"]:
+            if idxj["suit"] == "H":
+                if idxj % 5 != 0:
+                    idxj = random.randint(0, 51)
+            if idxj["suit"] == "C":
+                if idxj % 3 != 0:
+                    idxj = random.randint(0, 51)
+            if idxj["suit"] == "D":
+                if idxj % 2 != 0:
+                    idxj = random.randint(0, 51)
+            if idxj["suit"] == "S":
+                if idxj % 7 != 0:
+                    idxj = random.randint(0, 51)
+            idxi, idxj == idxj, idxi
+            return [deck]
